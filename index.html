@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Ride Reminder App</title>
+        <link rel = "stylesheet" href="css/style.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6ky0s6kmaxH15hsxsNHKuZeI6n_OG2eA&libraries=places"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="js/maps.js"></script>
+    </head>
+    <body>
+        <div class="header_container">
+            <div class="container">
+                <h2>Uber Ride Reminder</h2>
+            </div>
+        </div>
+        <div class="form_container">
+            <div class="container">
+
+                <div class="col-md-4">
+
+                    <form role="form">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-map-marker"></span></span>
+                                <input type="text" class="form-control" id="source" placeholder="Source" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-map-marker"></span></span>
+                                <input type="text" class="form-control" id="destination" placeholder="Destination" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+                                <input type="time" class="form-control" id="time" max="23:00">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+                                <input type="email" class="form-control" id="email" placeholder="Email" required>
+                            </div>
+                        </div>
+                        <input onclick="directionsdisplayonMap()" type="button" id="submit" class="btn btn-primary" value="Remind Me" disabled/>
+                    </form>
+
+                    <div id="results_container">
+                        <button type="button" class="btn btn-success" id="distance">
+
+                        </button>
+                        <button type="button" class="btn btn-success" id="duration">
+
+                        </button>
+                        <div id="uber_results_container">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr class="info">
+                                        <th>CAB NAME</th>
+                                        <th>ESTIMATION TIME</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="cab_datacontainer">
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div> 
+
+                <div class="col-md-8">
+                    <div id="map_container">
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="response_container">
+            <div class="container">
+                
+            </div>
+        </div>
+    </body>
+</html>
